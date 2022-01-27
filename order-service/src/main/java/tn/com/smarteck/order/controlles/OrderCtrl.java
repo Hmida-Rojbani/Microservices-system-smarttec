@@ -19,6 +19,7 @@ public class OrderCtrl {
 	@PostMapping("/bookOrder")
 	public Order bookOrder(@RequestBody Order order) {
 		return orderService.saveOrder(order);
+		
 	}
 
 }

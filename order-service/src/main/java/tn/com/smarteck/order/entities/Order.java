@@ -15,5 +15,6 @@ public class Order {
 	private String name;
 	private int qty;
 	private double price;
+	private String transactionId;
 
 }
