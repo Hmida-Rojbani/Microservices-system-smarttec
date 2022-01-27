@@ -1,5 +1,6 @@
 package tn.com.smarteck.order.controlles;
 
+import org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,6 +17,7 @@ import tn.com.smarteck.order.services.OrderService;
 public class OrderCtrl {
 	
 	private OrderService orderService;
+	private ServletWebServerApplicationContext webServerAppCtxt;
 	
 	@PostMapping("/bookOrder")
 	public Order bookOrder(@RequestBody Order order) {
@@ -25,7 +27,7 @@ public class OrderCtrl {
 	
 	@GetMapping("/hello")
 	public String hello() {
-		return "Hello from Order Service";
+		return "Hello from Order Service :" + webServerAppCtxt.getWebServer().getPort();
 	}
 
 }
