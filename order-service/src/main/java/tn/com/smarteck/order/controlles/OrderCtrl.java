@@ -1,5 +1,6 @@
 package tn.com.smarteck.order.controlles;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,11 @@ public class OrderCtrl {
 	public Order bookOrder(@RequestBody Order order) {
 		return orderService.saveOrder(order);
 		
+	}
+	
+	@GetMapping("/hello")
+	public String hello() {
+		return "Hello from Order Service";
 	}
 
 }
